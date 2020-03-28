@@ -6,3 +6,6 @@
 .navbar {
   background-color: aquamarine;
 }
+.row {
+  display: inline;
+}

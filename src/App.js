@@ -5,6 +5,7 @@ import DashBoard from "./Components/layout/DashBoard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Pokemon from "./Components/pokemon/Pokemon";
+import TypeList from "./Components/type/TypeList";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route exact path="/" component={DashBoard} />
-            <Route exact path="/pokemon/:pokemonIndex" component={Pokemon} />
+            <Route path="/" exact component={DashBoard} />
+            <Route path="/pokemon/:pokemonIndex" component={Pokemon} />
+            <Route path="/type" component={TypeList} />
           </Switch>
         </div>
       </div>
