@@ -26,10 +26,14 @@ const TYPE_COLORS = {
 };
 
 export default class Pokemon extends Component {
+  constructor(props) {
+    super(props);
+    this.catch = this.catch.bind(this);
+  }
   state = {
     name: "",
     imageUrl: "",
-    pokemondIndex: "",
+    pokemonIndex: "",
     types: [],
     description: "",
     stats: {
@@ -47,8 +51,16 @@ export default class Pokemon extends Component {
     genderRatioMale: "",
     genderRatioFemale: "",
     evs: "",
-    hatchSteps: ""
+    hatchSteps: "",
+    catched: []
   };
+
+  catch() {
+    this.setState({
+      catched: this.pokemonIndex.push
+    });
+    console.log(this.state.catched);
+  }
 
   async componentDidMount() {
     const { pokemonIndex } = this.props.match.params;
@@ -190,6 +202,12 @@ export default class Pokemon extends Component {
                   src={this.state.imageUrl}
                   className="card-img-top rounded mx-auto mt-2"
                 />
+                <button
+                  className="button float-right"
+                  onClick={() => this.catch()}
+                >
+                  CATCH!
+                </button>
               </div>
               <div className="col-md-9">
                 <h4 className="mx-auto">{this.state.name}</h4>

@@ -17,6 +17,12 @@ export default class NavBar extends Component {
           >
             Types
           </Link>
+          <Link
+            to="/catched"
+            className="navbar-brand col-sm-3 col-md-2 mr-0 align-items-center"
+          >
+            Catched Pokemons
+          </Link>
         </nav>
       </div>
     );
